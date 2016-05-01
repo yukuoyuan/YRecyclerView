@@ -42,7 +42,7 @@ public class CircleLoadingView extends View {
 
     private void init(AttributeSet attrs, int defStyle) {
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.CircleLoadingView);
-        mIndicatorColor = a.getColor(R.styleable.CircleLoadingView_progress_color, Color.BLUE);
+        mIndicatorColor = a.getColor(R.styleable.CircleLoadingView_progress_color, Color.WHITE);
         a.recycle();
         mPaint = new Paint();
         mPaint.setColor(mIndicatorColor);
