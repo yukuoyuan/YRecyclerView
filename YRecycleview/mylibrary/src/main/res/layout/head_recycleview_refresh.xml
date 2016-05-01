@@ -44,6 +44,6 @@
             android:layout_marginRight="15dp"
             android:layout_toLeftOf="@id/ll_y_recycleview_head_text"
             android:visibility="invisible"
-            app:progress_color="@color/colorPrimary" />
+            app:progress_color="#49ff0000" />
     </RelativeLayout>
 </LinearLayout>

@@ -13,7 +13,7 @@ import yuan.kuo.yu.R;
 
 /**
  * Created by yukuo on 2016/4/29.
- * 自定义的圆形进度条
+ * Custom round progress bar
  */
 public class CircleLoadingView extends View {
     public static final int DEFAULT_SIZE = 30;

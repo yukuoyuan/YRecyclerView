@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     public void run() {
                         demoAdapter.addRLoadMOreData();
-                        ycl.loadMoreComplete();
+                        ycl.setloadMoreComplete();
                     }
                 }, 2500);
             }

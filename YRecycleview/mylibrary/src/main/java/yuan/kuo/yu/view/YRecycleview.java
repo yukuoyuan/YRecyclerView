@@ -447,7 +447,7 @@ public class YRecycleview extends RecyclerView {
      * 还原所有的状态
      */
     public void reSetStatus() {
-        loadMoreComplete();
+        setloadMoreComplete();
         refreshComplete();
     }
 
@@ -461,7 +461,7 @@ public class YRecycleview extends RecyclerView {
     /**
      * 设置加载更多完成
      */
-    public void loadMoreComplete() {
+    public void setloadMoreComplete() {
         //设置加载数据为false
         isLoadingData = false;
         View footView = mFootViews.get(0);

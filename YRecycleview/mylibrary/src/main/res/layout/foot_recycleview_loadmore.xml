@@ -10,7 +10,7 @@
         android:id="@+id/pb_y_recycleview_foot_loadmore_progressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:progress_color="@color/colorPrimary" />
+        app:progress_color="#49ff0000" />
 
     <TextView
         android:id="@+id/tv_y_recycleview_foot_loadmore_status"

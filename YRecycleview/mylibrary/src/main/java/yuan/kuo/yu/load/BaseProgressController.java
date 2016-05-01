@@ -40,30 +40,20 @@ public abstract class BaseProgressController {
     }
 
     /**
-     * 绘制
+     * draw
      *
-     * @param canvas 画布
-     * @param paint  画笔
+     * @param canvas canvas
+     * @param paint  paint
      */
     public abstract void draw(Canvas canvas, Paint paint);
 
-    /**
-     * 创建一个动画或者动画集合
-     */
     public abstract List<Animator> createAnimation();
 
     public void initAnimation() {
         mAnimators = createAnimation();
     }
 
-    /**
-     * make animation to start or end when target
-     * view was be Visible or Gone or Invisible.
-     * make animation to cancel when target view
-     * be onDetachedFromWindow.
-     *
-     * @param animStatus
-     */
+
     public void setAnimationStatus(AnimStatus animStatus) {
         if (mAnimators == null) {
             return;
