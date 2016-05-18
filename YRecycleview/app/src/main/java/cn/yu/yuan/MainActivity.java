@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 20; i++) {
             list.add("于" + i);
         }
         final DemoAdapter demoAdapter = new DemoAdapter(list);
