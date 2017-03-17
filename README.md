@@ -2,21 +2,20 @@
 使用方法很简单
 
 ##看下效果图展示
-![这里写图片描述](compile%20%27cn.yuan.yu.recycleview:mylibrary:1.0.0%27)
-
+![这里写图片描述](http://img.blog.csdn.net/20170317141629430?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWFza1NoYXJr/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 ###maven引用方式
 ```
 <dependency>
   <groupId>cn.yuan.yu.recycleview</groupId>
   <artifactId>mylibrary</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
 ###gradle引用方式
 ```
-compile 'cn.yuan.yu.recycleview:mylibrary:1.0.0'
+compile 'cn.yuan.yu.recycleview:mylibrary:1.0.1'
 ```
 ```javascript
     布局文件添加
