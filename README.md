@@ -1,5 +1,19 @@
 ##这是一个下拉刷新和下拉加载的Recycleview的控件,实现的想法来自于XListview
 使用方法很简单
+
+###maven引用方式
+```
+<dependency>
+  <groupId>cn.yuan.yu.recycleview</groupId>
+  <artifactId>mylibrary</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+###gradle引用方式
+```
+compile 'cn.yuan.yu.recycleview:mylibrary:1.0.0'
+```
 ```javascript
     布局文件添加
      <yuan.kuo.yu.view.YRecycleview
