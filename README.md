@@ -1,6 +1,10 @@
 ##这是一个下拉刷新和下拉加载的Recycleview的控件,实现的想法来自于XListview
 使用方法很简单
 
+##看下效果图展示
+![这里写图片描述](compile%20%27cn.yuan.yu.recycleview:mylibrary:1.0.0%27)
+
+
 ###maven引用方式
 ```
 <dependency>
