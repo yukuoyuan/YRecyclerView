@@ -4,7 +4,7 @@ apply plugin: 'com.jfrog.bintray'
 version = "1.0.1"
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "25.0.0"
     resourcePrefix "yukuoyuanyrecycleview"    //这个随便填
     defaultConfig {
         minSdkVersion 15
