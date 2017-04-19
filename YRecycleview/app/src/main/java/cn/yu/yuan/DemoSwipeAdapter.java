@@ -34,15 +34,17 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
      */
     // TODO 一定要按照这个方式写,不然会crash,希望你有更好的解决方案
     public void removeData(int position) {
-        list.remove(position);
         notifyItemRemoved(position + 1);
         if (position != list.size()) {
             if (position == 0) {
+                list.remove(position);
                 notifyDataSetChanged();
             } else if (position == (list.size() - 1)) {
+                list.remove(position);
                 notifyItemRangeChanged(position, 0);
             } else {
-                notifyItemRangeChanged(position, list.size() - position);
+                list.remove(position-1);
+                notifyItemRangeChanged(position, list.size() - position + 1);
             }
         }
     }
