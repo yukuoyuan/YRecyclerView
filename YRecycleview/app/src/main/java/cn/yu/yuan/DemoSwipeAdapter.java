@@ -43,7 +43,7 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 list.remove(position);
                 notifyItemRangeChanged(position, 0);
             } else {
-                list.remove(position-1);
+                list.remove(position);
                 notifyItemRangeChanged(position, list.size() - position + 1);
             }
         }
