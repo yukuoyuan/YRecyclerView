@@ -32,5 +32,5 @@ compile 'cn.yuan.yu.recycleview:mylibrary:1.0.1'
 #有问题请反馈
 * 邮件(yukuoyuan@hotmail.com)
 * QQ: 152046273
-更新日志
+###更新日志
 2017/4/19:修复了因为没有上啦刷新,导致删除数据索引越界的问题,感谢[XiaoDada](https://github.com/XiaoDada)提的bug.
