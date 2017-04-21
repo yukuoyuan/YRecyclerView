@@ -33,6 +33,7 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
      * @param position 索引
      */
     // TODO 一定要按照这个方式写,不然会crash,希望你有更好的解决方案
+    // TODO 这么写是为了删除条目的动画,效果,如果不需要动画的,可以进行直接全部刷新数据(notifyDataSetChanged());
     public void removeData(int position) {
         notifyItemRemoved(position + 1);
         if (position != list.size()) {
