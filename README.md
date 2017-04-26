@@ -32,6 +32,7 @@ compile 'cn.yuan.yu.recycleview:mylibrary:1.0.1'
 # 有问题请反馈
 * 邮件(yukuoyuan@hotmail.com)
 * QQ: 152046273
+* 博客: [CSDN博客](http://blog.csdn.net/easkshark)
 
 ### 更新日志
 
