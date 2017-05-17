@@ -562,7 +562,7 @@ public class YRecycleview extends RecyclerView {
      *
      * @param footView
      */
-    public void addFootView(YRecycleviewRefreshFootView footView) {
+    private void addFootView(YRecycleviewRefreshFootView footView) {
         mFootViews.clear();
         mFootViews.add(footView);
     }
