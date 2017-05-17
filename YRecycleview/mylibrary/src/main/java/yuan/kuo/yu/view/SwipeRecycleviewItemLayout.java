@@ -170,7 +170,6 @@ public class SwipeRecycleviewItemLayout extends FrameLayout {
         isOpen = false;
         invalidate();
     }
-
     /**
      * 这是一个打开菜单的方法
      */
