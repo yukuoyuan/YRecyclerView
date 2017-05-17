@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<yuan.kuo.yu.view.SwipeRecycleviewItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/srl_item"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:background="?android:colorBackground">
+    android:orientation="vertical"
+    app:clickToClose="true"
+    app:drag_edge="right">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -33,4 +37,4 @@
 
     <include layout="@layout/item_content" />
 
-</yuan.kuo.yu.view.SwipeRecycleviewItemLayout>
+</com.daimajia.swipe.SwipeLayout>

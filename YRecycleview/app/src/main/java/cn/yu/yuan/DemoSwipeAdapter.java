@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.swipe.SwipeLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,30 +43,33 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
      *
      * @param position 索引
      */
-    // TODO 一定要按照这个方式写,不然会crash,希望你有更好的解决方案
-    // TODO 这么写是为了删除条目的动画,效果,如果不需要动画的,可以进行直接全部刷新数据(notifyDataSetChanged());
     public void removeData(int position) {
-        /**
-         * 不带动画效果的删除
-         */
-        list.remove(position);
-        notifyDataSetChanged();
-        /**
-         * 以下代码为可以有删除动画效果
-         */
-//        notifyItemRemoved(position + 1);
-//        if (position != list.size()) {
-//            if (position == 0) {
-//                list.remove(position);
-//                notifyDataSetChanged();
-//            } else if (position == (list.size() - 1)) {
-//                list.remove(position);
-//                notifyItemRangeChanged(position, 0);
-//            } else {
-//                list.remove(position);
-//                notifyItemRangeChanged(position, list.size() - position + 1);
-//            }
-//        }
+
+        //TODO  刷新全部数据有bug,因为复用的问题,导致删除最下边的条目,最上边的条目会有滑动按钮关闭的展示
+//        list.remove(position);
+//        notifyDataSetChanged();
+        notifyItemRemoved(position + 1);
+        if (position != list.size()) {
+            if (position == 0) {
+                /**
+                 * 删除第一条数据
+                 */
+                list.remove(position);
+                notifyDataSetChanged();
+            } else if (position == (list.size() - 1)) {
+                /**
+                 * 删除最后一条数据
+                 */
+                list.remove(position);
+                notifyItemRangeChanged(position, 0);
+            } else {
+                /**
+                 * 删除中间的数据
+                 */
+                list.remove(position);
+                notifyItemRangeChanged(position + 1, list.size() - position + 1);
+            }
+        }
     }
 
     @Override
@@ -90,17 +95,18 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             MyHolder myHolder = (MyHolder) holder;
             myHolder.item_content.setText(list.get(position).name);
         } else if (holder instanceof MySwipeMenuHolder) {
-            MySwipeMenuHolder myHolder = (MySwipeMenuHolder) holder;
-            myHolder.item_content.setText(list.get(position).name + "######" + position);
-            myHolder.item_content.setOnClickListener(new View.OnClickListener() {
+            final MySwipeMenuHolder myHolders = (MySwipeMenuHolder) holder;
+            myHolders.item_content.setText(list.get(position).name + "######" + position);
+            myHolders.item_content.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(), list.get(position).name, Toast.LENGTH_SHORT).show();
                 }
             });
-            myHolder.delete.setOnClickListener(new View.OnClickListener() {
+            myHolders.delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    myHolders.srl_item.close();
                     removeData(position);
                 }
             });
@@ -123,15 +129,15 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     class MySwipeMenuHolder extends RecyclerView.ViewHolder {
-
         private final TextView delete;
         private final TextView ok;
         private final TextView item_content;
+        private final SwipeLayout srl_item;
 
         public MySwipeMenuHolder(View itemView) {
             super(itemView);
             item_content = (TextView) itemView.findViewById(R.id.item_content);
-
+            srl_item = (SwipeLayout) itemView.findViewById(R.id.srl_item);
             delete = (TextView) itemView.findViewById(R.id.delete);
             ok = (TextView) itemView.findViewById(R.id.ok);
         }
