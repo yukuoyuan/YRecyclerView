@@ -44,32 +44,9 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
      * @param position 索引
      */
     public void removeData(int position) {
-
-        //TODO  刷新全部数据有bug,因为复用的问题,导致删除最下边的条目,最上边的条目会有滑动按钮关闭的展示
-//        list.remove(position);
-//        notifyDataSetChanged();
-        notifyItemRemoved(position + 1);
-        if (position != list.size()) {
-            if (position == 0) {
-                /**
-                 * 删除第一条数据
-                 */
-                list.remove(position);
-                notifyDataSetChanged();
-            } else if (position == (list.size() - 1)) {
-                /**
-                 * 删除最后一条数据
-                 */
-                list.remove(position);
-                notifyItemRangeChanged(position, 0);
-            } else {
-                /**
-                 * 删除中间的数据
-                 */
-                list.remove(position);
-                notifyItemRangeChanged(position + 1, list.size() - position + 1);
-            }
-        }
+        // TODO 使用刷新单一个条目会出现问题,所以请不要使用
+        list.remove(position);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -106,7 +83,6 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             myHolders.delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    myHolders.srl_item.close();
                     removeData(position);
                 }
             });
