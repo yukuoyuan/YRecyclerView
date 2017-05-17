@@ -14,8 +14,8 @@ import yuan.kuo.yu.view.YRecycleview;
 
 /**
  * Created by yukuoyuan on 2017/3/25.
+ * 这是一个测试上啦刷新下拉加载更多的界面
  */
-
 public class LoadMoreAndRefreshActivity extends AppCompatActivity {
     private List<String> list = new ArrayList<>();
     private YRecycleview ycl;

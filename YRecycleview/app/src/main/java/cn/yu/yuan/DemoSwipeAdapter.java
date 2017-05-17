@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Created by yukuo on 2016/4/30.
+ * 这是一个测试带有侧滑删除的列表适配器
  */
 public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<SwipeDate> list = new ArrayList<>();
@@ -20,10 +21,18 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public void addReFreshData() {
+        SwipeDate swipeDate = new SwipeDate();
+        swipeDate.name = "添加刷新数据";
+        swipeDate.type = 0;
+        list.add(0, swipeDate);
         notifyDataSetChanged();
     }
 
     public void addRLoadMOreData() {
+        SwipeDate swipeDate = new SwipeDate();
+        swipeDate.name = "添加加载更多数据";
+        swipeDate.type = 0;
+        list.add(list.size(), swipeDate);
         notifyDataSetChanged();
     }
 
@@ -35,19 +44,27 @@ public class DemoSwipeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     // TODO 一定要按照这个方式写,不然会crash,希望你有更好的解决方案
     // TODO 这么写是为了删除条目的动画,效果,如果不需要动画的,可以进行直接全部刷新数据(notifyDataSetChanged());
     public void removeData(int position) {
-        notifyItemRemoved(position + 1);
-        if (position != list.size()) {
-            if (position == 0) {
-                list.remove(position);
-                notifyDataSetChanged();
-            } else if (position == (list.size() - 1)) {
-                list.remove(position);
-                notifyItemRangeChanged(position, 0);
-            } else {
-                list.remove(position);
-                notifyItemRangeChanged(position, list.size() - position + 1);
-            }
-        }
+        /**
+         * 不带动画效果的删除
+         */
+        list.remove(position);
+        notifyDataSetChanged();
+        /**
+         * 以下代码为可以有删除动画效果
+         */
+//        notifyItemRemoved(position + 1);
+//        if (position != list.size()) {
+//            if (position == 0) {
+//                list.remove(position);
+//                notifyDataSetChanged();
+//            } else if (position == (list.size() - 1)) {
+//                list.remove(position);
+//                notifyItemRangeChanged(position, 0);
+//            } else {
+//                list.remove(position);
+//                notifyItemRangeChanged(position, list.size() - position + 1);
+//            }
+//        }
     }
 
     @Override
