@@ -15,4 +15,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="上拉刷新和加载更多和侧滑删除" />
+
+    <Button
+        android:id="@+id/bt_set_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置空布局" />
+
+    <Button
+        android:id="@+id/bt_set_loading_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置可下拉刷新的空布局" />
 </LinearLayout>

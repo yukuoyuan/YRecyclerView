@@ -15,8 +15,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoadMoreAndRefreshActivity" />
-        <activity android:name=".SwipeLoadMoreAndRefreshActivity" />
+        <!--这是一个下拉刷新和上拉加载的界面-->
+        <activity
+            android:name=".LoadMoreAndRefreshActivity"
+            android:screenOrientation="portrait" />
+        <!--这是一个下拉刷新和上啦加载,并且可以侧滑删除的界面-->
+        <activity
+            android:name=".SwipeLoadMoreAndRefreshActivity"
+            android:screenOrientation="portrait" />
+        <!--这是一个设置空布局的界面-->
+        <activity
+            android:name=".EmptyViewActivity"
+            android:screenOrientation="portrait" />
+        <!--这是一个设置可下拉加载的空布局的界面-->
+        <activity
+            android:name=".LoadingEmptyViewActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
