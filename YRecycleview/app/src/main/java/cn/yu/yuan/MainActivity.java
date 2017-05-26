@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_set_loading_empty_view = (Button) findViewById(R.id.bt_set_loading_empty_view);
         bt_load_more_refresh.setOnClickListener(this);
         bt_load_more_refresh_swipe.setOnClickListener(this);
+        bt_set_empty_view.setOnClickListener(this);
+        bt_set_loading_empty_view.setOnClickListener(this);
     }
 
     @Override

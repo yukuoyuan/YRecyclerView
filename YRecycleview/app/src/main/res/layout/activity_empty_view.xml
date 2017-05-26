@@ -13,6 +13,7 @@
         android:id="@+id/tv_empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:text="页面空空如也~"
         android:visibility="gone" />
 </RelativeLayout>
