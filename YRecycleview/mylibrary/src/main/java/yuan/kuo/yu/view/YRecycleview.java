@@ -35,6 +35,14 @@ public class YRecycleview extends RecyclerView {
      * 脚布局集合
      */
     private ArrayList<View> mFootViews = new ArrayList<>();
+    /**
+     * 可下拉加载的空布局集合
+     */
+    private ArrayList<View> mLoadingEmptyViews = new ArrayList<>();
+    /**
+     * 下拉加载的布局集合
+     */
+    private ArrayList<View> mLoadingViews = new ArrayList<>();
     //当前的头布局
     private YRecycleviewRefreshHeadView mHeadView;
     //监听器
@@ -565,5 +573,31 @@ public class YRecycleview extends RecyclerView {
     private void addFootView(YRecycleviewRefreshFootView footView) {
         mFootViews.clear();
         mFootViews.add(footView);
+    }
+
+    /**
+     * 设置可以下拉加载的空布局
+     *
+     * @param view
+     */
+    public void setLoadingEmptyView(View view) {
+        mLoadingEmptyViews.clear();
+        mHeaderViews.add(view);
+        sHeaderTypes.add(HEADER_INIT_INDEX + mHeaderViews.size());
+    }
+
+    /**
+     * 隐藏可下拉加载空布局布局的隐藏
+     */
+    public void setLoadingEmptyViewGone() {
+        mLoadingViews.clear();
+        for (View view : mHeaderViews) {
+            if (view instanceof YRecycleviewRefreshHeadView) {
+                mLoadingViews.add(view);
+            }
+        }
+        mHeaderViews.clear();
+        mHeaderViews.addAll(mLoadingViews);
+        invalidate();
     }
 }
