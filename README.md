@@ -35,6 +35,7 @@ compile 'cn.yuan.yu.recycleview:mylibrary:1.0.1'
 * 博客: [CSDN博客](http://blog.csdn.net/easkshark)
 
 ### 更新日志
+ - 2016/5/27:提交了设置空布局,以及空布局可以下拉加载的方法以及Demo
  - 2017/5/16:有同学提出,刷新单个条目的时候,有问题,这个问题是因为处理headview导致的,感谢[PascalGUO](https://github.com/pascalGuo)提的bug.
  - 2017/4/19:修复了因为没有上啦刷新,导致删除数据索引越界的问题,感谢[XiaoDada](https://github.com/XiaoDada)提的bug.
  - 2016/3/30:提交了第一个版本的YRecycleview.
