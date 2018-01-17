@@ -79,6 +79,8 @@ public class YRecycleviewRefreshFootView extends LinearLayout {
                 pb_y_recycleview_foot_loadmore_progressbar.setVisibility(View.GONE);
                 this.setVisibility(View.VISIBLE);
                 break;
+            default:
+                break;
         }
 
     }

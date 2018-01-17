@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import yuan.kuo.yu.view.YRecycleview;
+import yuan.kuo.yu.view.YRecyclerView;
 
 /**
  * Created by yukuoyuan on 2017/3/25.
@@ -18,14 +18,14 @@ import yuan.kuo.yu.view.YRecycleview;
  */
 public class LoadMoreAndRefreshActivity extends AppCompatActivity {
     private List<String> list = new ArrayList<>();
-    private YRecycleview ycl;
+    private YRecyclerView ycl;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loadmore_refresh);
-        ycl = (YRecycleview) findViewById(R.id.ycl);
+        ycl = (YRecyclerView) findViewById(R.id.ycl);
         initData();
     }
 
@@ -36,7 +36,7 @@ public class LoadMoreAndRefreshActivity extends AppCompatActivity {
         final DemoAdapter demoAdapter = new DemoAdapter(list);
         ycl.setLayoutManager(new LinearLayoutManager(this));
         ycl.setAdapter(demoAdapter);
-        ycl.setRefreshAndLoadMoreListener(new YRecycleview.OnRefreshAndLoadMoreListener() {
+        ycl.setRefreshAndLoadMoreListener(new YRecyclerView.OnRefreshAndLoadMoreListener() {
             @Override
             public void onRefresh() {
                 new Handler().postDelayed(new Runnable() {

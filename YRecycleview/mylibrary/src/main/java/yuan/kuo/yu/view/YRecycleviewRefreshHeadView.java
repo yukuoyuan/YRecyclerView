@@ -158,6 +158,7 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
 
     /**
      * 返回当前的状态
+     *
      * @return
      */
     public int getStatus() {
@@ -165,7 +166,7 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
     }
 
     /**
-     * 释放意图
+     * 是否在刷新
      *
      * @return
      */
