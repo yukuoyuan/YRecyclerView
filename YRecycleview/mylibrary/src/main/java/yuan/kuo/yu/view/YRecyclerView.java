@@ -202,7 +202,7 @@ public class YRecyclerView extends RecyclerView {
      * 当触摸控件的时候调用的方法
      *
      * @param e 触摸事件
-     * @return
+     * @return 是否拦截事件
      */
     @Override
     public boolean onTouchEvent(MotionEvent e) {
@@ -255,7 +255,7 @@ public class YRecyclerView extends RecyclerView {
     /**
      * 设置适配器
      *
-     * @param adapter
+     * @param adapter 包装的适配器
      */
     @Override
     public void setAdapter(Adapter adapter) {
@@ -522,7 +522,7 @@ public class YRecyclerView extends RecyclerView {
     /**
      * 是否是顶部
      *
-     * @return
+     * @return 是否在顶部
      */
     public boolean isOnTop() {
         /**

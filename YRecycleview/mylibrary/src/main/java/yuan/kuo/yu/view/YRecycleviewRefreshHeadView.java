@@ -96,6 +96,8 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
 
     /**
      * 设置这个刷新状态的方法
+     *
+     * @param status 设置展示的状态
      */
     public void setState(int status) {
         //如果状态一致就不要更改
@@ -159,7 +161,7 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
     /**
      * 返回当前的状态
      *
-     * @return
+     * @return 当前的状态
      */
     public int getStatus() {
         return mStatus;
@@ -168,7 +170,7 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
     /**
      * 是否在刷新
      *
-     * @return
+     * @return 是否正在刷新
      */
     public boolean releaseAction() {
         //是否在刷新
@@ -198,7 +200,7 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
     /**
      * 移动距离
      *
-     * @param delta
+     * @param delta 移动的距离
      */
     public void onMove(float delta) {
         if (getVisibleHeight() > 0 || delta > 0) {
@@ -215,6 +217,8 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
 
     /**
      * 这是一个让布局高度改变的方法
+     *
+     * @param Height 动态的高度
      */
     public void smoothScrollTo(int Height) {
         ValueAnimator animator = ValueAnimator.ofInt(getVisibleHeight(), Height);
@@ -255,7 +259,7 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
     /**
      * 获取显示的高度
      *
-     * @return
+     * @return 获取显示的高度
      */
     public int getVisibleHeight() {
         LayoutParams lp = (LayoutParams) mContentView.getLayoutParams();
@@ -265,7 +269,7 @@ public class YRecycleviewRefreshHeadView extends LinearLayout {
     /**
      * 设置显示的高度
      *
-     * @param height
+     * @param height 设置显示的高度
      */
     public void setVisibleHeight(int height) {
         if (height < 0) height = 0;

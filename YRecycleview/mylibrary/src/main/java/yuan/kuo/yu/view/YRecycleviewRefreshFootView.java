@@ -14,8 +14,6 @@ import yuan.kuo.yu.load.CircleLoadingView;
 
 /**
  * @author yukuoyuan
- * @author yukuo
- * @date 2016/4/30
  */
 public class YRecycleviewRefreshFootView extends LinearLayout {
 
@@ -71,7 +69,7 @@ public class YRecycleviewRefreshFootView extends LinearLayout {
     /**
      * 设置当前状态
      *
-     * @param state
+     * @param state 需要展示的状态
      */
     public void setState(int state) {
         switch (state) {
@@ -106,8 +104,9 @@ public class YRecycleviewRefreshFootView extends LinearLayout {
 
     /**
      * 设置空布局的提示内容
+     *
+     * @param emptyText 空布局展示的提示语
      */
-
     public void setEmptyTips(String emptyText) {
         tv_y_recycleview_foot_loadmore_nodata.setText(emptyText);
     }
