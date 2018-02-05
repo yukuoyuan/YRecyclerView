@@ -5,20 +5,18 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import yuan.kuo.yu.view.YRecycleview;
+import yuan.kuo.yu.view.YRecyclerView;
 
 /**
  * Created by yukuoyuan on 2017/5/26.
  * 这是一个列表设置空布局的界面
  */
-public class EmptyViewActivity extends AppCompatActivity implements YRecycleview.OnRefreshAndLoadMoreListener {
+public class EmptyViewActivity extends AppCompatActivity implements YRecyclerView.OnRefreshAndLoadMoreListener {
 
-    private YRecycleview rcv_empty_view;
-    private TextView tv_empty;
+    private YRecyclerView rcv_empty_view;
     private ArrayList<String> arrayList = new ArrayList<>();
     private DemoAdapter demoAdapter;
 
@@ -26,19 +24,19 @@ public class EmptyViewActivity extends AppCompatActivity implements YRecycleview
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empty_view);
-        rcv_empty_view = (YRecycleview) findViewById(R.id.rcv_empty_view);
-        tv_empty = (TextView) findViewById(R.id.tv_empty);
-        rcv_empty_view.setEmptyView(tv_empty);
+        rcv_empty_view = (YRecyclerView) findViewById(R.id.rcv_empty_view);
         rcv_empty_view.setLayoutManager(new LinearLayoutManager(this));
         demoAdapter = new DemoAdapter(arrayList);
         rcv_empty_view.setAdapter(demoAdapter);
         rcv_empty_view.setRefreshAndLoadMoreListener(this);
+        rcv_empty_view.showLoadingEmptyView("没数据,等着吧");
     }
 
     @Override
     public void onRefresh() {
         new Handler().postDelayed(new Runnable() {
             public void run() {
+                rcv_empty_view.setLoadingEmptyViewGone();
                 demoAdapter.addReFreshData();
                 rcv_empty_view.setReFreshComplete();
             }

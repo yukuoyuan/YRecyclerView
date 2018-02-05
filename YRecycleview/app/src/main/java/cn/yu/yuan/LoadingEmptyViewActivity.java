@@ -26,7 +26,7 @@ public class LoadingEmptyViewActivity extends AppCompatActivity implements YRecy
         setContentView(R.layout.activity_loading_empty_view);
         rcv_loading_empty_view = (YRecyclerView) findViewById(R.id.rcv_loading_empty_view);
         rcv_loading_empty_view.setLayoutManager(new LinearLayoutManager(this));
-        rcv_loading_empty_view.setLoadingEmptyView();
+        rcv_loading_empty_view.showLoadingEmptyView("稍等哦亲!暂无数据~");
         demoAdapter = new DemoAdapter(arrayList);
         rcv_loading_empty_view.setAdapter(demoAdapter);
         rcv_loading_empty_view.setRefreshAndLoadMoreListener(this);
@@ -36,14 +36,9 @@ public class LoadingEmptyViewActivity extends AppCompatActivity implements YRecy
     public void onRefresh() {
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                if (demoAdapter.getItemCount() > 5) {
-                    rcv_loading_empty_view.setLoadingEmptyView();
-                } else {
-                    demoAdapter.addReFreshData();
-                    rcv_loading_empty_view.setReFreshComplete();
-                    rcv_loading_empty_view.setLoadingEmptyViewGone();
-                }
-
+                demoAdapter.addReFreshData();
+                rcv_loading_empty_view.setReFreshComplete();
+                rcv_loading_empty_view.setLoadingEmptyViewGone();
             }
         }, 2500);
     }

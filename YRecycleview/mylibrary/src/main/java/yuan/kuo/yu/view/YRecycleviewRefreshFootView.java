@@ -13,12 +13,16 @@ import yuan.kuo.yu.load.CircleLoadingView;
 
 
 /**
- * Created by yukuo on 2016/4/30.
+ * @author yukuoyuan
+ * @author yukuo
+ * @date 2016/4/30
  */
 public class YRecycleviewRefreshFootView extends LinearLayout {
 
     private CircleLoadingView pb_y_recycleview_foot_loadmore_progressbar;
     private TextView tv_y_recycleview_foot_loadmore_status;
+    private TextView tv_y_recycleview_foot_loadmore_nodata;
+    private LinearLayout ll_recycleview_foot_loadmore_no_more_data;
     /**
      * 加载中
      */
@@ -28,9 +32,13 @@ public class YRecycleviewRefreshFootView extends LinearLayout {
      */
     public final static int STATE_COMPLETE = 1;
     /**
-     * 正常状态
+     * 没有更多的数据
      */
     public final static int STATE_NOMORE = 2;
+    /**
+     * 没有数据
+     */
+    public final static int STATE_NODATA = 3;
 
     public YRecycleviewRefreshFootView(Context context) {
         super(context);
@@ -55,6 +63,8 @@ public class YRecycleviewRefreshFootView extends LinearLayout {
         View mContentView = View.inflate(context, R.layout.foot_recycleview_loadmore, null);
         pb_y_recycleview_foot_loadmore_progressbar = (CircleLoadingView) mContentView.findViewById(R.id.pb_y_recycleview_foot_loadmore_progressbar);
         tv_y_recycleview_foot_loadmore_status = (TextView) mContentView.findViewById(R.id.tv_y_recycleview_foot_loadmore_status);
+        tv_y_recycleview_foot_loadmore_nodata = (TextView) mContentView.findViewById(R.id.tv_y_recycleview_foot_loadmore_nodata);
+        ll_recycleview_foot_loadmore_no_more_data = (LinearLayout) mContentView.findViewById(R.id.ll_recycleview_foot_loadmore_no_more_data);
         addView(mContentView);
     }
 
@@ -68,6 +78,9 @@ public class YRecycleviewRefreshFootView extends LinearLayout {
             case STATE_LOADING:
                 pb_y_recycleview_foot_loadmore_progressbar.setVisibility(View.VISIBLE);
                 tv_y_recycleview_foot_loadmore_status.setText("加载中...");
+                ll_recycleview_foot_loadmore_no_more_data.setVisibility(VISIBLE);
+                tv_y_recycleview_foot_loadmore_nodata.setVisibility(GONE);
+
                 this.setVisibility(View.VISIBLE);
                 break;
             case STATE_COMPLETE:
@@ -77,11 +90,25 @@ public class YRecycleviewRefreshFootView extends LinearLayout {
             case STATE_NOMORE:
                 tv_y_recycleview_foot_loadmore_status.setText("没有更多了..");
                 pb_y_recycleview_foot_loadmore_progressbar.setVisibility(View.GONE);
+                ll_recycleview_foot_loadmore_no_more_data.setVisibility(VISIBLE);
+                tv_y_recycleview_foot_loadmore_nodata.setVisibility(GONE);
+                this.setVisibility(View.VISIBLE);
+                break;
+            case STATE_NODATA:
+                tv_y_recycleview_foot_loadmore_nodata.setVisibility(VISIBLE);
+                ll_recycleview_foot_loadmore_no_more_data.setVisibility(GONE);
                 this.setVisibility(View.VISIBLE);
                 break;
             default:
                 break;
         }
+    }
 
+    /**
+     * 设置空布局的提示内容
+     */
+
+    public void setEmptyTips(String emptyText) {
+        tv_y_recycleview_foot_loadmore_nodata.setText(emptyText);
     }
 }

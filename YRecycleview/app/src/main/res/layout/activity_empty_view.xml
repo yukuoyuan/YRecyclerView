@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <yuan.kuo.yu.view.YRecycleview
+    <yuan.kuo.yu.view.YRecyclerView
         android:id="@+id/rcv_empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -124,6 +124,8 @@ public class YRecyclerView extends RecyclerView {
             mHeadView = refreshHeader;
         }
         YRecycleviewRefreshFootView footView = new YRecycleviewRefreshFootView(getContext());
+//        LinearLayout.LayoutParams mFootViewlayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//        footView.setLayoutParams(mFootViewlayoutParams);
         addFootView(footView);
         mFootViews.get(0).setVisibility(GONE);
     }
@@ -633,6 +635,19 @@ public class YRecyclerView extends RecyclerView {
     }
 
     /**
+     * 设置是否没有数据(列表数据为空)
+     *
+     * @param isNo         是否没有数据
+     * @param emptyContext 空数据展示的提示
+     */
+    public void setIsNoData(boolean isNo, String emptyContext) {
+        this.isNoMore = isNo;
+        View footView = mFootViews.get(0);
+        ((YRecycleviewRefreshFootView) footView).setState(isNoMore ? YRecycleviewRefreshFootView.STATE_NODATA : YRecycleviewRefreshFootView.STATE_COMPLETE);
+        ((YRecycleviewRefreshFootView) footView).setEmptyTips(emptyContext);
+    }
+
+    /**
      * 还原所有的状态
      */
     public void reSetStatus() {
@@ -642,15 +657,17 @@ public class YRecyclerView extends RecyclerView {
 
     /**
      * 设置可以加载的空布局
+     *
+     * @param emptyContext 空数据展示的提示
      */
-    public void setLoadingEmptyView() {
-        setNoMoreData(true);
+    public void showLoadingEmptyView(String emptyContext) {
+        setIsNoData(true, emptyContext);
     }
 
     /**
      * 设置隐藏脚布局
      */
     public void setLoadingEmptyViewGone() {
-        setNoMoreData(false);
+        setIsNoData(false, "");
     }
 }
