@@ -9,13 +9,13 @@
 <dependency>
   <groupId>cn.yuan.yu.recycleview</groupId>
   <artifactId>mylibrary</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <type>pom</type>
 </dependency>
 ```
 ### gradle引用方式
 ```
- compile 'cn.yuan.yu.recycleview:mylibrary:1.0.2'
+ compile 'cn.yuan.yu.recycleview:mylibrary:1.0.3'
 ```
 ```javascript
     布局文件添加
@@ -35,6 +35,8 @@
 * 博客: [CSDN博客](http://blog.csdn.net/easkshark)
 
 ### 更新日志
+
+ - 2018/2/10:增加添加头布局功能
  - 2018/2/5 :重构了空数据下拉刷新的方法的修改,移除了无用的方法
  - 2017/5/27:提交了设置空布局,以及空布局可以下拉加载的方法以及Demo
  - 2017/5/16:有同学提出,刷新单个条目的时候,有问题,这个问题是因为处理headview导致的,感谢[PascalGUO](https://github.com/pascalGuo)提的bug.
