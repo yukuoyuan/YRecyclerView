@@ -25,7 +25,7 @@
             android:screenOrientation="portrait" />
         <!--这是一个设置空布局的界面-->
         <activity
-            android:name=".EmptyViewActivity"
+            android:name=".AddHeadViewActivity"
             android:screenOrientation="portrait" />
         <!--这是一个设置可下拉加载的空布局的界面-->
         <activity

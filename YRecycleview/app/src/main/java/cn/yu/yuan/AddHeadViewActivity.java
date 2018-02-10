@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -12,9 +13,9 @@ import yuan.kuo.yu.view.YRecyclerView;
 
 /**
  * Created by yukuoyuan on 2017/5/26.
- * 这是一个列表设置空布局的界面
+ * 这是一个列表添加头布局
  */
-public class EmptyViewActivity extends AppCompatActivity implements YRecyclerView.OnRefreshAndLoadMoreListener {
+public class AddHeadViewActivity extends AppCompatActivity implements YRecyclerView.OnRefreshAndLoadMoreListener {
 
     private YRecyclerView rcv_empty_view;
     private ArrayList<String> arrayList = new ArrayList<>();
@@ -26,6 +27,9 @@ public class EmptyViewActivity extends AppCompatActivity implements YRecyclerVie
         setContentView(R.layout.activity_empty_view);
         rcv_empty_view = (YRecyclerView) findViewById(R.id.rcv_empty_view);
         rcv_empty_view.setLayoutManager(new LinearLayoutManager(this));
+
+        View headView = View.inflate(this, R.layout.head_custom, null);
+        rcv_empty_view.addHeadView(headView);
         demoAdapter = new DemoAdapter(arrayList);
         rcv_empty_view.setAdapter(demoAdapter);
         rcv_empty_view.setRefreshAndLoadMoreListener(this);

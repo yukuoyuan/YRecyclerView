@@ -91,6 +91,7 @@ public class YRecyclerView extends RecyclerView {
      * 数据观察者
      */
     private final RecyclerView.AdapterDataObserver mDataObserver = new DataObserver();
+    private static final int HEADER_INIT_INDEX = 10000;
 
     public YRecyclerView(Context context) {
         this(context, null);
@@ -530,7 +531,20 @@ public class YRecyclerView extends RecyclerView {
          */
         return !(mHeaderViews == null || mHeaderViews.isEmpty()) && mHeaderViews.get(0).getParent() != null;
     }
-
+    /**
+     * 添加头布局
+     *
+     * @param headView 刷新头布局
+     */
+    public void addHeadView(View headView) {
+        if (pullRefreshEnabled && !(mHeaderViews.get(0) instanceof YRecycleviewRefreshHeadView)) {
+            YRecycleviewRefreshHeadView refreshHeader = new YRecycleviewRefreshHeadView(getContext());
+            mHeaderViews.add(0, refreshHeader);
+            mHeadView = refreshHeader;
+        }
+        mHeaderViews.add(headView);
+        sHeaderTypes.add(HEADER_INIT_INDEX + mHeaderViews.size());
+    }
     /**
      * 添加底部布局
      *

@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.bt_set_empty_view:
-                intent = new Intent(MainActivity.this, EmptyViewActivity.class);
+                intent = new Intent(MainActivity.this, AddHeadViewActivity.class);
                 startActivity(intent);
                 break;
             case R.id.bt_set_loading_empty_view:

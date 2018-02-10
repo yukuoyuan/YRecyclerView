@@ -20,7 +20,7 @@
         android:id="@+id/bt_set_empty_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="设置空布局" />
+        android:text="添加头布局" />
 
     <Button
         android:id="@+id/bt_set_loading_empty_view"
