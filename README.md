@@ -19,7 +19,7 @@
 ```
 ```javascript
     布局文件添加
-     <yuan.kuo.yu.view.YRecycleview
+     <yuan.kuo.yu.view.YRecyclerView
         android:id="@+id/ycl"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
