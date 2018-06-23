@@ -35,6 +35,7 @@ public class LoadingEmptyViewActivity extends AppCompatActivity implements YRecy
     @Override
     public void onRefresh() {
         new Handler().postDelayed(new Runnable() {
+            @Override
             public void run() {
                 demoAdapter.addReFreshData();
                 rcv_loading_empty_view.setReFreshComplete();
@@ -46,10 +47,10 @@ public class LoadingEmptyViewActivity extends AppCompatActivity implements YRecy
     @Override
     public void onLoadMore() {
         new Handler().postDelayed(new Runnable() {
+            @Override
             public void run() {
                 demoAdapter.addRLoadMOreData();
-                rcv_loading_empty_view.setReFreshComplete();
-                rcv_loading_empty_view.setLoadingEmptyViewGone();
+                rcv_loading_empty_view.reSetStatus();
             }
         }, 2500);
 

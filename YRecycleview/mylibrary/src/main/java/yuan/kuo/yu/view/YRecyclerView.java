@@ -173,7 +173,7 @@ public class YRecyclerView extends RecyclerView {
              * 如果说有数据,最后一条显示的数据是最后一个条目,并且自孩子条目大于,并且还有数据,并且脚布局的状态是不在刷新中
              */
             if (layoutManager.getChildCount() > 0
-                    && lastVisibleItemPosition >= layoutManager.getItemCount() - 1 && layoutManager.getItemCount() > layoutManager.getChildCount()
+                    && lastVisibleItemPosition >= layoutManager.getItemCount() - 2 && layoutManager.getItemCount() > layoutManager.getChildCount()
                     && !isNoMore && mHeadView.getStatus() < YRecycleviewRefreshHeadView.STATE_REFRESHING) {
                 /**
                  * 获取脚布局
