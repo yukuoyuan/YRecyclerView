@@ -9,13 +9,13 @@
 <dependency>
   <groupId>cn.yuan.yu.recycleview</groupId>
   <artifactId>mylibrary</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <type>pom</type>
 </dependency>
 ```
 ### gradle引用方式
 ```
- compile 'cn.yuan.yu.recycleview:mylibrary:1.0.3'
+ compile 'cn.yuan.yu.recycleview:mylibrary:1.0.4'
 ```
 ```javascript
     布局文件添加
@@ -35,7 +35,7 @@
 * 博客: [CSDN博客](http://blog.csdn.net/easkshark)
 
 ### 更新日志
-
+ - 2018/6/23:修复了上拉加载更多的时候出现空白间隙问题的修改
  - 2018/2/10:增加添加头布局功能
  - 2018/2/5 :重构了空数据下拉刷新的方法的修改,移除了无用的方法
  - 2017/5/27:提交了设置空布局,以及空布局可以下拉加载的方法以及Demo
